@@ -20,7 +20,7 @@ export default function GameCard({ game }) {
                         <div className="badge badge-outline">{game.release_date}</div>
                         <div className="badge badge-outline">{game.publisher}</div>
                         <div className="badge badge-outline">{game.developer}</div>
-                        <div className="badge badge-outline">{game.game_url}</div>
+                        <button className="btn btn-active btn-warning" onClick={() => window.open(game.game_url, "_blank")}>Play Now!</button>
                     </div>
                 </div>
             </div>
