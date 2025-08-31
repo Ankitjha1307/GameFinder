@@ -7,7 +7,7 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/games")
       .then(res => res.json())
-      .then((res) => setGames(res.slice(0, 1))) // take 10 for display
+      .then((res) => setGames(res.slice(0, 20))) // take 10 for display
       .catch(err => console.error("Error fetching games:", err));
   }, []);
 
