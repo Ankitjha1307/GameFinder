@@ -9,9 +9,16 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/games")
       .then(res => res.json())
-      .then((res) => setGames(res.slice(0, 100))) // take 10 for display
-      .catch(err => console.error("Error fetching games:", err));
+      .then((res) => setGames(res))
+      .catch(err => console.error("Error fetching games:", err))
+      .finally(() => setLoading(false));
   }, []);
+
+  const gamesByGenre = games.reduce((acc, game) => {
+    if(!acc[game.genre]) acc[game.genre]= [];
+    acc[game.genre].push(game);
+    return acc;
+  }, {})
 
   const filteredGames = games.filter(game =>{
     const term = searchTerm.toLowerCase();
@@ -24,10 +31,24 @@ export default function Home() {
     <div>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
-      {filteredGames.map((game) => (
+      {searchTerm && filteredGames.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
     </div>
+
+    <div>
+      <h2 className="text-yellow-500 font-bold text-center text-4xl m-4">Games by Genres</h2>
+      {Object.keys(gamesByGenre).map((genre) => (
+          <div key={genre}>
+            <h3 className="text-yellow-500 text-2xl text-decoration-line: underline ml-4">{`Top Games in ${genre}`}</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
+              {gamesByGenre[genre].slice(0, 4).map((game) => (
+                <GameCard key={game.id} game={game} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
