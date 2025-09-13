@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-900 text-white">
+    <div className="flex justify-between items-center p-4 text-white">
       <Logo />
       <div>
         <button className="btn btn-warning mr-2">Profile</button>

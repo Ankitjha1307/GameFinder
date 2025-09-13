@@ -4,7 +4,9 @@ import SearchBar from "../components/SearchBar";
 
 export default function Home() {
   const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  
 
   useEffect(() => {
     fetch("/api/games")
@@ -41,9 +43,11 @@ export default function Home() {
       {Object.keys(gamesByGenre).map((genre) => (
           <div key={genre}>
             <h3 className="text-yellow-500 text-2xl text-decoration-line: underline ml-4">{`Top Games in ${genre}`}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
-              {gamesByGenre[genre].slice(0, 4).map((game) => (
-                <GameCard key={game.id} game={game} />
+            <div className="flex gap-4 overflow-x-auto no-scrollbar gap-4 p-5 ">
+              {gamesByGenre[genre].map((game) => (
+                <div key={game.id} className="w-1/4 flex-shrink-0">
+                  <GameCard game={game} />
+                </div>
               ))}
             </div>
           </div>
