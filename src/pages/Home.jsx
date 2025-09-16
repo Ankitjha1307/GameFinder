@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
+import Navbar from "../components/Navbar";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -45,6 +46,7 @@ export default function Home() {
 
   return (
     <div>
+      <Navbar />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
       {searchTerm && filteredGames.map((game) => (

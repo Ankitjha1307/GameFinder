@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useMemo, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
 
 gsap.registerPlugin(SplitText);
@@ -122,6 +123,16 @@ export default function InfiniteHero() {
     { scope: rootRef }
   );
 
+  const navigate = useNavigate(); 
+
+  function handleLogin() {
+    navigate("/login");
+  }
+
+  function handleSignup() {
+    navigate("/signup");
+  }
+
   return (
     <div
       ref={rootRef}
@@ -152,8 +163,8 @@ export default function InfiniteHero() {
             ref={ctaRef}
             className="mt-8 flex flex-row items-center justify-center gap-4"
           >
-            <button className="btn btn-secondary hover:bg-white hover:text-pink-500">Login</button>
-            <button className="btn btn-secondary hover:bg-white hover:text-pink-500">Signup</button>
+            <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={handleLogin}>Login</button>
+            <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={handleSignup}>Signup</button>
           </div>
         </div>
       </div>

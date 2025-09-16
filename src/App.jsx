@@ -1,5 +1,5 @@
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './pages/Home'
-import Navbar from './components/Navbar'
 import InfiniteHero from './components/InfiniteHero'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -7,13 +7,14 @@ import Signup from './pages/Signup'
 function App() {  
 
   return (
-      <>
-        <Navbar />
-        <Login />
-        <Signup />
-		    <InfiniteHero />
-        <Home />
-      </>
+      <Router>
+        <Routes>
+          <Route path="/" element={<InfiniteHero />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
   )
 }
 

@@ -2,15 +2,16 @@ import React from 'react'
 
 function Login() {
   return (
-    <div className="hero bg-[#2F323A] min-h-screen">
+    <div className="hero bg-[#2F323A]  min-h-screen">
         <div>
-            <div className="text-center bg-base-100 lg:text-center rounded-lg p-2">
-            <h1 className="text-6xl font-bold text-pink-500">Login</h1>
-            <p className="py-6 text-yellow-500">
-              Enter your credentials
-            </p>
+          <p className= "text-8xl text-yellow-500 m-2">Gamezzz</p>
+            <div className="text-center bg-base-100 lg:text-center  p-2">
+              <h1 className="text-6xl font-bold text-pink-500">Login</h1>
+              <p className="py-6 text-yellow-500">
+                Enter your credentials
+              </p>
             </div>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className="card bg-base-100 w-full max-w-sm shrink-0  shadow-2xl">
             <div className="card-body">
                 <fieldset className="fieldset">
                 <label className="label text-yellow-500">Email</label>
@@ -21,7 +22,7 @@ function Login() {
                 <div><a className="link link-hover text-yellow-500">Forgot password?</a></div>
                 </fieldset>
             </div>
-            </div>
+          </div>
         </div>
 </div>
   )
