@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GameCard({ game }) {
     return(
-        <div className="card w-full bg-[#1C211D]  hover:bg-[#2F323A] transition duration-200">
+        <div className="card w-full bg-[#1C211D]  hover:bg-[#2F323A] transition duration-200 h-full min-h-[500px]">
             <div className="card shadow-sm">
             <figure className="px-2 py-2">
                 <img

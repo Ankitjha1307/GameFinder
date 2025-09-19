@@ -1,7 +1,7 @@
 import React from 'react'
 import {useRoutes} from "../utils/routes"
 function Login() {
-  const {login} = useRoutes();
+  const {toHome} = useRoutes();
   return (
     <div className="hero bg-[#2F323A] min-h-screen">
         <div>
@@ -18,7 +18,7 @@ function Login() {
                 <input type="email" className="input" placeholder="Email" />
                 <label className="label text-yellow-500">Password</label>
                 <input type="password" className="input" placeholder="Password" />
-                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2" onClick={login}>Login</button>
+                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2" onClick={toHome}>Login</button>
                 {/* <link>forgot password?</link> */}
                 </fieldset>
             </div>

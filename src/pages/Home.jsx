@@ -10,6 +10,7 @@ export default function Home() {
   const scrollRefs = useRef({});
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar searchInput={searchInput} setSearchInput={setSearchInput} setSearchTerm={setSearchTerm} />
       {searchTerm? (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
         {filteredGames.length > 0 ? (

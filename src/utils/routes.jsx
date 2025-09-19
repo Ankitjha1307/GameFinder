@@ -11,7 +11,7 @@ export function useRoutes() {
     navigate("/signup");
   }
 
-  function login() {
+  function toHome() {
     navigate("/home");
   }
 
@@ -19,5 +19,5 @@ export function useRoutes() {
     navigate("/");
   }
 
-  return { toLogin, toSignup, login, logout };
+  return { toLogin, toSignup, toHome, logout };
 }
