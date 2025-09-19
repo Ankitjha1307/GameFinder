@@ -1,6 +1,7 @@
 import React from 'react'
-
+import {useRoutes} from "../utils/routes"
 function Signup() {
+const {login} = useRoutes();
   return (
     <div className="hero bg-[#2F323A] min-h-screen">
         <div>
@@ -19,7 +20,7 @@ function Signup() {
                 <input type="password" className="input" placeholder="Password" />
                 <label className="label text-yellow-500">Confirm Password</label>
                 <input type="password" className="input" placeholder="Confirm Password" />
-                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2">Signup</button>
+                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2" onClick={login}>Signup</button>
                 </fieldset>
             </div>
             </div>

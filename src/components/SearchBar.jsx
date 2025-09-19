@@ -3,7 +3,7 @@ import React from "react";
 export default function SearchBar({ searchTerm, setSearchTerm }){
 
     return(
-        <div className="flex justify-center p-4 bg-gray-900">
+        <div className="flex p-4">
             <input type="text" 
             placeholder="Search for games..." 
             className="p-2 border border-gray-300 bg-black rounded text-yellow-500 " 
