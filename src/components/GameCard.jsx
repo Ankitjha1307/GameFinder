@@ -1,6 +1,14 @@
 import React from "react";
 
 export default function GameCard({ game }) {
+    
+        function slice(genre){
+            if(genre.length >= 10){
+                return genre.slice(0,6) + "..."
+            }
+            return genre
+        }
+    const genre=slice(game.genre)
     return(
         <div className="card w-full bg-[#1C211D]  hover:bg-[#2F323A] transition duration-200 h-full min-h-[500px]">
             <div className="card shadow-sm">
@@ -13,7 +21,7 @@ export default function GameCard({ game }) {
             <div className="card-body px-4 py-2">
                 <h2 className="card-title">
                 {game.title}
-                <div className="badge badge-secondary">{game.genre}</div>
+                <div className="badge badge-secondary">{genre}</div>
                     </h2>
                     <p className="py-2">{game.short_description}</p>
                     <div className="card-actions py-2 justify-center w-full">

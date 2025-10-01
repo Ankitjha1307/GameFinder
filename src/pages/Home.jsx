@@ -11,8 +11,68 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  
 
+  // Filter states
+  const [filters, setFilters] = useState({
+    genres: [],
+    platforms: [],
+    publishers: [],
+    developers: []
+  });
+
+  // Filter handler functions
+
+  // Toggle genre filter
+  const handleGenreSelect = (genre) => {
+    setFilters(prev => ({
+      ...prev,
+      genres: prev.genres.includes(genre) 
+        ? prev.genres.filter(g => g !== genre)
+        : [...prev.genres, genre]
+    }));
+  };
+
+  // Toggle platform filter
+  const handlePlatformSelect = (platform) => {
+    setFilters(prev => ({
+      ...prev,
+      platforms: prev.platforms.includes(platform)
+      ? prev.platforms.filter(p => p !== platform)
+      : [...prev.platforms, platform]
+    }))
+  }
+
+  // Toggle publisher filter
+  const handlePublisherSelect = (publisher) => {
+    setFilters(prev => ({
+      ...prev, 
+      publishers: prev.publishers.includes(publisher)
+      ? prev.publishers.filter(p => p!== publisher)
+      : [...prev.publishers, publisher]
+    }))
+  }
+
+  // Toggle developer filter 
+  const handleDeveloperSelect = (developer) => {
+    setFilters(prev => ({
+      ...prev,
+      developers: prev.developers.includes(developer) 
+        ? prev.developers.filter(d => d !== developer)
+        : [...prev.developers, developer]
+    }));
+  };
+
+
+  // Clear all filters
+  const clearFilters = () => {
+    setFilters({
+      genres: [],
+      platforms: [],
+      publishers: [],
+      developers: []
+    });
+  };
+  
   useEffect(() => {
     fetch("/api/games")
       .then(res => res.json())
@@ -21,11 +81,16 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
+  const genres = [...new Set(games.map(game => game.genre))].filter(Boolean);
+  const platforms = [...new Set(games.map(game => game.platform))].filter(Boolean);
+  const publishers = [...new Set(games.map(game => game.publisher))].filter(Boolean);
+  const developers = [...new Set(games.map(game => game.developer))].filter(Boolean);
+
   const gamesByGenre = games.reduce((acc, game) => {
     if(!acc[game.genre]) acc[game.genre]= [];
     acc[game.genre].push(game);
     return acc;
-  }, {})
+  }, {});
 
   const filteredGames = games.filter(game =>{
     const term = searchTerm.toLowerCase();
@@ -60,10 +125,10 @@ export default function Home() {
       </div>
       ) : (
         <div>
-          <h2 className="text-yellow-500 font-bold text-center text-4xl m-4">Games by Genres</h2>
+          <h2 className="text-pink-500 font-bold text-center text-4xl m-4">Games by Genres</h2>
           {Object.keys(gamesByGenre).map((genre) => (
               <div key={genre} className="relative">
-                <h3 className="text-yellow-500 text-2xl underline ml-4">
+                <h3 className="text-yellow-500 text-2xl ml-4">
                   {`Top Games in ${genre}`}
                 </h3>
                 <button

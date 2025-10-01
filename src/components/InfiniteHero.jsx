@@ -123,7 +123,7 @@ export default function InfiniteHero() {
     { scope: rootRef }
   );
 
-  const { toLogin, toSignup } = useRoutes();
+  const { toLogin, toSignup, toHome } = useRoutes();
 
   return (
     <div
@@ -158,6 +158,7 @@ export default function InfiniteHero() {
             <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={toLogin}>Login</button>
             <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={toSignup}>Signup</button>
           </div>
+          <button className="btn btn-secondary m-2 hover:bg-white hover:text-pink-500" onClick={toHome}>Continue as guest</button>
         </div>
       </div>
     </div>
