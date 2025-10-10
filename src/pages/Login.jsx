@@ -18,7 +18,7 @@ function Login() {
                 <input type="email" className="input" placeholder="Email" />
                 <label className="label text-yellow-500">Password</label>
                 <input type="password" className="input" placeholder="Password" />
-                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2" onClick={toHome}>Login</button>
+                <button className="btn btn-secondary hover:bg-white hover:text-pink-500 m-2" >Login</button>
                 {/* <link>forgot password?</link> */}
                 </fieldset>
             </div>

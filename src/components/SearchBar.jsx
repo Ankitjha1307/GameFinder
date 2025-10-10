@@ -11,7 +11,7 @@ export default function SearchBar({ searchInput, setSearchInput, searchTerm, set
   };
 
   return (
-    <div className="flex ml-5 mr-2">
+    <div className="flex ml-auto mr-20">
       <input
         type="text"
         placeholder="Search for games..."
@@ -28,7 +28,7 @@ export default function SearchBar({ searchInput, setSearchInput, searchTerm, set
       {searchInput || searchTerm ? (
         <button
           onClick={handleClear}
-          className="ml-2 p-2 bg-yellow-500 text-white rounded hover:bg-white hover:text-yellow-500"
+          className="btn btn-warning ml-2 mr-2 text-white hover:bg-white hover:text-yellow-500"
         >
           Clear
         </button>
