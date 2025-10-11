@@ -1,6 +1,6 @@
 import React from "react";
 
-function Filter({ 
+export default function Filter({ 
   genres = [],
   platforms = [], 
   publishers = [], 
@@ -39,7 +39,7 @@ function Filter({
           
           {/* Genres Section */}
           <div className="mb-6">
-            <h3 className="text-yellow-500 font-bold mb-3">Genres</h3>
+            <h2 className="text-pink-500 font-bold mb-3">Genres</h2>
             <div className="flex flex-wrap gap-2">
               {genres && genres.length > 0 ? (
                 genres.map((genre) => (
@@ -63,7 +63,7 @@ function Filter({
 
           {/* Platforms Section */}
           <div className="mb-6">
-            <h3 className="text-yellow-500 font-bold mb-3">Available on</h3>
+            <h2 className="text-pink-500 font-bold mb-3">Available on</h2>
             <div className="flex flex-wrap gap-2">
               {platforms && platforms.length > 0 ? (
                 platforms.map((platform) => (
@@ -87,7 +87,7 @@ function Filter({
 
           {/* Publishers Section */}
           <div className="mb-6">
-            <h3 className="text-yellow-500 font-bold mb-3">Publisher</h3>
+            <h2 className="text-pink-500 font-bold mb-3">Publisher</h2>
             <div className="flex flex-wrap gap-2">
               {publishers && publishers.length > 0 ? (
                 publishers.map((publisher) => (
@@ -111,7 +111,7 @@ function Filter({
 
           {/* Developers Section */}
           <div className="mb-6">
-            <h3 className="text-yellow-500 font-bold mb-3">Developer</h3>
+            <h2 className="text-pink-500 font-bold mb-3">Developer</h2>
             <div className="flex flex-wrap gap-2">
               {developers && developers.length > 0 ? (
                 developers.map((developer) => (
@@ -134,7 +134,7 @@ function Filter({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-2 mt-6 sticky bottom-1 bg-[#1C211D] z-50 ">
+          <div className="flex gap-2 mt-6 w-full sticky bottom-0 bg-[#1C211D] z-50 ">
             <button 
               onClick={handleButtonClick(onClearFilters)}
               className="btn btn-secondary hover:bg-white hover:text-pink-500"
@@ -151,5 +151,3 @@ function Filter({
     </div>
   );
 }
-
-export default Filter;

@@ -10,6 +10,12 @@ export default function SearchBar({ searchInput, setSearchInput, searchTerm, set
     setSearchTerm("");    
   };
 
+  const handleKeyDown = (e) => {
+    if(e.key === 'Enter') {
+      handleSearch();
+    }
+  }
+  
   return (
     <div className="flex ml-auto mr-20">
       <input
@@ -18,6 +24,7 @@ export default function SearchBar({ searchInput, setSearchInput, searchTerm, set
         className="p-2 border border-yellow-500 bg-black rounded text-yellow-500"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button
         onClick={handleSearch}

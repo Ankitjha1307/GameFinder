@@ -18,6 +18,10 @@ export function useRoutes() {
   function logout() {
     navigate("/");
   }
+  
+  function toTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-  return { toLogin, toSignup, toHome, logout };
+  return { toLogin, toSignup, toHome, logout, toTop };
 }
