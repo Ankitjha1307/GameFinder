@@ -153,8 +153,8 @@ const shouldShowLeftArrow = (genre) => {
     return gamesInGenre.length > 4;
   };
 
-  
-  if (loading) return <div>Loading...</div>;
+
+  if (loading) return;
 
 
   return (

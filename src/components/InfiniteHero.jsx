@@ -7,6 +7,8 @@ import { SplitText } from "gsap/SplitText";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import {useRoutes} from "../utils/routes"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 gsap.registerPlugin(SplitText);
 
@@ -146,19 +148,19 @@ export default function InfiniteHero() {
           </h1>
           <p
             ref={pRef}
-            className="mx-auto mt-4 max-w-2xl text-sm md:text-base font-light tracking-tight text-white/70"
+            className="mx-auto mt-4 max-w-2xl text-sm md:text-base font-light tracking-tight text-white/100"
           >
             Discover new games tailored to your preferences and explore a world of endless possibilities.
           </p>
 
-          <div
+          {/* <div
             ref={ctaRef}
             className="mt-8 flex flex-row items-center justify-center gap-4"
           >
             <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={toLogin}>Login</button>
             <button className="btn btn-secondary hover:bg-white hover:text-pink-500" onClick={toSignup}>Signup</button>
-          </div>
-          <button className="btn btn-secondary m-2 hover:bg-white hover:text-pink-500" onClick={toHome}>Continue as guest</button>
+          </div> */}
+          <button className="btn btn-secondary m-2 hover:bg-white hover:text-pink-500" onClick={toHome}>Let's Start <FontAwesomeIcon icon={faArrowRight} /></button>
         </div>
       </div>
     </div>
