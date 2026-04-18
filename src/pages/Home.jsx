@@ -77,7 +77,7 @@ export default function Home() {
   };
   
   useEffect(() => {
-    fetch("/api/games")
+    fetch('https://www.freetogame.com/api/games')
       .then(res => res.json())
       .then((res) => setGames(res))
       .catch(err => console.error("Error fetching games:", err))
