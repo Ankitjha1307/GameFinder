@@ -17,25 +17,25 @@ export default function SearchBar({ searchInput, setSearchInput, searchTerm, set
   }
   
   return (
-    <div className="flex ml-auto mr-20">
+    <div className="flex w-full items-center gap-2 md:w-auto md:justify-end">
       <input
         type="text"
         placeholder="Search for games..."
-        className="p-2 border border-yellow-500 bg-black rounded text-yellow-500"
+        className="w-full min-w-0 flex-1 rounded border border-yellow-500 bg-black p-2 text-yellow-500 md:w-64 md:flex-none"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
         onKeyDown={handleKeyDown}
       />
       <button
         onClick={handleSearch}
-        className="ml-2 p-2 bg-pink-500 text-white rounded hover:bg-white hover:text-pink-500"
+        className="shrink-0 rounded bg-pink-500 p-2 text-white hover:bg-white hover:text-pink-500"
       >
         Search
       </button>
       {searchInput || searchTerm ? (
         <button
           onClick={handleClear}
-          className="btn btn-warning ml-2 mr-2 text-white hover:bg-white hover:text-yellow-500"
+          className="btn btn-warning shrink-0 text-white hover:bg-white hover:text-yellow-500"
         >
           Clear
         </button>

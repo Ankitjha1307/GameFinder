@@ -159,8 +159,8 @@ const shouldShowLeftArrow = (genre) => {
 
   return (
     <div>
-      <div className="flex items-center p-4 sticky top-0 bg-[#1C211D] z-50 ">
-        <div className="flex items-center">
+      <div className="sticky top-0 z-50 flex flex-col gap-3 bg-[#1C211D] p-4 md:flex-row md:items-center">
+        <div className="flex flex-wrap items-center gap-2">
           <Filter 
             genres={genres}
             platforms={platforms}
@@ -175,19 +175,19 @@ const shouldShowLeftArrow = (genre) => {
           />
       
           {Object.values(filters).filter(arr => arr.length > 0).length > 0 && (
-            <div className="text-yellow-500 text-sm ml-4 mr-2">
+            <div className="text-yellow-500 text-sm">
               Active filters: {Object.values(filters).flat().length}
             </div>
           )}
         </div>
 
-        <div className="flex-1"> {/* flex-1 makes it take available space */}
+        <div className="w-full md:flex-1"> {/* flex-1 makes it take available space */}
           <Navbar searchInput={searchInput} setSearchInput={setSearchInput} setSearchTerm={setSearchTerm} />
         </div>
       </div>
 
       {searchTerm || Object.values(filters).filter(arr => arr.length > 0).length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
+        <div className="grid grid-cols-1 gap-4 p-5 md:grid-cols-2 lg:grid-cols-4">
           {filteredGames.length > 0 ? (
             filteredGames.map((game) => <GameCard key={game.id} game={game} />)
           ) : (
@@ -218,7 +218,10 @@ const shouldShowLeftArrow = (genre) => {
                 className="flex gap-4 overflow-x-auto no-scrollbar p-5"
               >
                 {gamesByGenre[genre].map((game) => (
-                  <div key={game.id} className="w-1/4 flex-shrink-0">
+                  <div
+                    key={game.id}
+                    className="w-full flex-shrink-0 md:w-1/2 lg:w-1/4"
+                  >
                     <GameCard game={game} />
                   </div>
                 ))}

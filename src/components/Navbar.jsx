@@ -7,17 +7,17 @@ function Navbar({searchInput, setSearchInput, setSearchTerm}) {
   const { logout } = useRoutes();
 
   return (
-    <div className="flex items-center justify-between w-full">
-      <div className="flex items-center">
+    <div className="flex w-full flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div className="order-2 flex items-center md:order-1">
         <SearchBar setSearchTerm={setSearchTerm} searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>
-      <div className="absolute left-1/2 transform -translate-x-1/2">
+      <div className="order-1 flex justify-center md:order-2">
         <Logo />
       </div>
-      <div className="flex items-center ml-auto">
+      <div className="order-3 flex items-center justify-end gap-2 md:ml-auto">
         {/* <button className="btn btn-warning mr-2 text-white hover:bg-white hover:text-yellow-500">Profile</button> */}
         
-        <button className="btn btn-warning mr-2 text-white hover:bg-white hover:text-yellow-500" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } }>
+        <button className="btn btn-warning text-white hover:bg-white hover:text-yellow-500" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } }>
           Profile
         </button>
 

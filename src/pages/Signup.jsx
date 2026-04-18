@@ -1,7 +1,7 @@
 import React from 'react'
 import {useRoutes} from "../utils/routes"
 function Signup() {
-const {login} = useRoutes();
+const {toLogin} = useRoutes();
   return (
     <div className="hero bg-[#2F323A] min-h-screen">
         <div>
