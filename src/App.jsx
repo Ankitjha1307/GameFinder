@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import InfiniteHero from './components/InfiniteHero'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import { Footer } from "./components/Footer"
+
 
 function App() {  
 
@@ -14,6 +16,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
         </Routes>
+        <Footer />
       </Router>
   )
 }
