@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-[#1C211D] border-t border-gray-700 mt-10">
@@ -12,20 +14,21 @@ export const Footer = () => {
           </p>
         </div>
         <div className="flex gap-6 text-sm">
-          <a href="/home" className="hover:text-yellow-500 transition">
-            Home
-          </a>
-          <a href="/home" className="hover:text-yellow-500 transition">
-            Games
-          </a>
-          <a 
-            href="https://www.freetogame.com/api-doc" 
-            target="_blank" 
-            rel="noreferrer"
-            className="hover:text-yellow-500 transition"
-          >
-            API
-          </a>
+          
+            <Link to="/home" className="hover:text-yellow-500 transition">
+                Home
+            </Link>
+            <Link to="/home" className="hover:text-yellow-500 transition">
+                Games
+            </Link>
+            <a 
+                href="https://www.freetogame.com/api-doc" 
+                target="_blank" 
+                rel="noreferrer"
+                className="hover:text-yellow-500 transition"
+            >
+                API
+            </a>
         </div>
         <div className="text-sm text-gray-400 text-center md:text-right">
           <p className="text-yellow-500">
