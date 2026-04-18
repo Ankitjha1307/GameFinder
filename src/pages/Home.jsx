@@ -215,7 +215,7 @@ const shouldShowLeftArrow = (genre) => {
               <div
                 ref={(el) => (scrollRefs.current[genre] = el)}
                 onScroll={() => handleScroll(genre)}
-                className="flex gap-4 overflow-x-auto no-scrollbar p-5"
+                className="flex gap-4 overflow-x-auto p-5"
               >
                 {gamesByGenre[genre].map((game) => (
                   <div

@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+import Logo from "./Logo";
 import {useRoutes} from "../utils/routes"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -138,11 +139,14 @@ export default function InfiniteHero() {
 
       <div className="relative z-10 flex h-screen w-full items-center justify-center px-6">
         <div className="text-center">
+          <div className=" mb-4 hover: cursor-pointer pointer-events-auto">
+            <Logo />
+          </div>
           <h1
             ref={h1Ref}
             className="mx-auto max-w-2xl lg:max-w-4xl text-[clamp(2.25rem,6vw,4rem)] font-extralight leading-[0.95] tracking-tight"
           >
-            Gamezzz: Your Ultimate Game Discovery Hub
+            Your Ultimate Game Discovery Hub
           </h1>
           <p
             ref={pRef}
